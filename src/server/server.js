@@ -24,8 +24,17 @@ if (ENV === 'development') {
   }
 
 app.get('*', (request, response) => {//llamado al servidor, capturamos todas las rutas
-    console.log("Hola mundo")
-    response.send({ hello: 'express' })//retorna un json
+    response.send(`<!DOCTYPE html>
+    <html>
+      <head>
+        <link rel="stylesheet" href="assets/app.css" type="text/css">
+        <title>Platzi Video</title>
+      </head>
+      <body>
+        <div id="app"></div>
+        <script src="assets/app.js" type="text/javascript"></script>
+      </body>
+    </html>`)
 });
 
 app.listen(PORT, (err) => {//funcion anonima que recobe error

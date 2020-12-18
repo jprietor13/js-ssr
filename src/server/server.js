@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';//recibe un array de rutas
 import { StaticRouter } from 'react-router-dom';
+import helmet from 'helmet';
 import reducer from '../frontend/reducers';
 import initialState from '../frontend/initialState';
 import serverRoutes from '../frontend/routes/serverRoutes';
@@ -36,6 +37,11 @@ if (ENV === 'development') {
     const serverConfig = { serverSideRender: true, publicPath };
     app.use(webpackDevMiddleware(compiler, serverConfig));
     app.use(webpackHotMiddleware(compiler));//hot module replacemente de todo el proyecto
+} else {
+    app.use(express.static(`${__dirname}/public`));
+    app.use(helmet());
+    app.use(helmet.permittedCrossDomainPolicies());
+    app.disable('x-powered-by');
 }
 
 const setResponse = (html, preloadedState) => {

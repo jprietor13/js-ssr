@@ -1,3 +1,5 @@
+/* eslint-disable eol-last */
+/* eslint-disable indent */
 import Home from '../containers/Home';
 import Login from '../containers/Login';
 import Register from '../containers/Register';
@@ -28,8 +30,7 @@ const routes = [
     {
         name: 'NotFound',
         component: NotFound,
-    }
-
+    },
 ];
 
 export default routes;

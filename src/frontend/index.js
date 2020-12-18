@@ -1,3 +1,7 @@
+/* eslint-disable eol-last */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable comma-dangle */
+/* eslint-disable import/order */
 import React from 'react';
 import initialState from './initialState';
 import ReactDOM from 'react-dom';

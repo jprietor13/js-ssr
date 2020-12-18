@@ -38,7 +38,7 @@ if (ENV === 'development') {
     app.use(webpackHotMiddleware(compiler));//hot module replacemente de todo el proyecto
 }
 
-const setResponse = (html) => {
+const setResponse = (html, preloadedState) => {
   return (`<!DOCTYPE html>
             <html>
               <head>
@@ -47,6 +47,9 @@ const setResponse = (html) => {
               </head>
               <body>
                 <div id="app">${html}</div>
+                <script>
+                window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+                </script>
                 <script src="assets/app.js" type="text/javascript"></script>
               </body>
             </html>`);
@@ -54,6 +57,7 @@ const setResponse = (html) => {
 
 const renderApp = (request, response) => {
   const store = createStore(reducer, initialState);
+  const preloadedState = store.getState();
   const html = renderToString(//llamamos al provider
     <Provider store={store}>
       <StaticRouter location={request.url} context={{}}>
@@ -61,7 +65,7 @@ const renderApp = (request, response) => {
       </StaticRouter>
     </Provider>,
   );
-  response.send(setResponse(html));
+  response.send(setResponse(html, preloadedState));
 };
 
 app.get('*', renderApp);//llamado al servidor, capturamos todas las rutas

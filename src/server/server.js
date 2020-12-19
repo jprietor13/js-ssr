@@ -78,5 +78,5 @@ app.get('*', renderApp);//llamado al servidor, capturamos todas las rutas
 
 app.listen(PORT, (err) => {//funcion anonima que recobe error
     if (err) console.err(err);
-    else console.log("Server running on port 3000");
+    else console.log(`Server running on port ${PORT}`);
 });

@@ -1,6 +1,7 @@
 {
-  "main.css": "/assets/app-5b29979e689b395e6ef8.css",
-  "main.js": "/assets/app-5b29979e689b395e6ef8.js",
+  "main.css": "/assets/app-2258829014b43925d13f.css",
+  "main.js": "/assets/app-2258829014b43925d13f.js",
+  "vendors.js": "/assets/vendor-2258829014b43925d13f.js",
   "assets/.gz": "/assets/.gz",
   "assets/twitter-icon.png": "/assets/0103ef81347edc3344acec319325eb81.png",
   "assets/remove-icon.png": "/assets/1baf6f54be269d1d45a5ebb09a788ded.png",
@@ -9,5 +10,5 @@
   "assets/plus-icon.png": "/assets/82e73f0c9de0d9e64a4f7eb6917fe799.png",
   "assets/google-icon.png": "/assets/87fee39f3ffc377fa871d31587cc532c.png",
   "assets/play-icon.png": "/assets/9a1e4bf4f3cb0556c15a96c17808dbf7.png",
-  "assets/app-5b29979e689b395e6ef8.js.LICENSE.txt": "/assets/app-5b29979e689b395e6ef8.js.LICENSE.txt"
+  "assets/vendor-2258829014b43925d13f.js.LICENSE.txt": "/assets/vendor-2258829014b43925d13f.js.LICENSE.txt"
 }
